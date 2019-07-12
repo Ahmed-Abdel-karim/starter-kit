@@ -14,16 +14,22 @@ module.exports = {
   entry: path.resolve(assetsDir, 'js/index.js'),
   output: {
     path: publicDir,
-    filename: 'js/[name].[contenthash].js',
+    filename: 'js/[name].[hash].js',
     sourceMapFilename: "[file].map",
-    chunkFilename: 'js/[name].[contenthash].chunk.js',
+    chunkFilename: 'js/[name].[hash].chunk.js',
     publicPath: "/"
   },
   module: {
     rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      use: 'happypack/loader',
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+          plugins: ["@babel/plugin-proposal-class-properties", "react-hot-loader/babel", "@babel/syntax-dynamic-import"]
+        }
+      }
     }, {
       test: /\.(bmp|gif|jpe?g|png)$/,
       use: {
@@ -39,24 +45,15 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
+    hot: true,
     overlay: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: publicDir,
+    publicPath: '/',
   },
   plugins: [
-    new HardSourceWebpackPlugin(),
-    new HappyPack({
-      loaders: [
-        {
-          loader: "babel-loader",
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ["@babel/plugin-proposal-class-properties", "react-hot-loader/babel", "@babel/syntax-dynamic-import"]
-          }
-        }
-      ],
-    }),
     new HTMLWebpackPlugin({
-      template: path.resolve(assetsDir,"index.html"),
+      template: path.resolve(assetsDir, "index.html"),
       filename: 'index.html',
       minify: {
         collapseWhitespace: false,
@@ -64,12 +61,17 @@ module.exports = {
       },
       chunksSortMode: 'none'
     }),
-    new webpack.HashedModuleIdsPlugin(),
     new ProgressBarPlugin({
       width: 100
     }),
     new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom'
+    }
+  },
   stats: 'errors-only',
   devtool: "inline-source-map",
 }
