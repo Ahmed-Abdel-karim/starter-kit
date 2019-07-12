@@ -1,0 +1,22 @@
+{
+  "name": "starter-kit",
+  "version": "1.0.0",
+  "description": "starter kit for react project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahmed-Abdel-karim/starter-kit.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "ahmed abdelakrim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ahmed-Abdel-karim/starter-kit/issues"
+  },
+  "homepage": "https://github.com/Ahmed-Abdel-karim/starter-kit#readme"
+}
