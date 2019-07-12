@@ -4,7 +4,8 @@
   "description": "starter kit for react project",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --config ./config/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,25 @@
   "bugs": {
     "url": "https://github.com/Ahmed-Abdel-karim/starter-kit/issues"
   },
-  "homepage": "https://github.com/Ahmed-Abdel-karim/starter-kit#readme"
+  "homepage": "https://github.com/Ahmed-Abdel-karim/starter-kit#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "happypack": "^5.0.1",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "html-webpack-plugin": "^3.2.0",
+    "loader": "^2.1.1",
+    "progress-bar-webpack-plugin": "^1.12.1",
+    "react-hot-loader": "^4.12.6",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
 }
