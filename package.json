@@ -10,7 +10,7 @@
     "format": "prettier --write  \"assets/**/*.js\" ",
     "lint": "eslint \"assets/**/*.js\" ",
     "build:dev": "webpack --config ./config/webpack.config.js",
-    "validate": "npm run all --parallel format lint"
+    "validate": "npm-run-all --parallel format lint"
   },
   "repository": {
     "type": "git",
