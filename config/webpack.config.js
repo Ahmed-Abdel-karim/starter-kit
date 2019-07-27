@@ -25,14 +25,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: [
-              '@babel/plugin-proposal-class-properties',
-              'react-hot-loader/babel',
-              '@babel/syntax-dynamic-import'
-            ]
-          }
         }
       },
       {
