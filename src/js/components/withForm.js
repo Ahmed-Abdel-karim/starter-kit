@@ -7,28 +7,27 @@ import { FormProvider } from './formContext';
 // 1 - add errors
 // 2 - add propTypes
 
-const withForm = ({ id, selector, actions = {} }) => (EnhancedComponent) => {
-
+const withForm = ({ id, selector, actions = {} }) => EnhancedComponent => {
   class FormWrapper extends Component {
-
-    componentDidMount() {
-
-    }
+    componentDidMount() {}
 
     render() {
       return (
-        <FormProvider value={{}} >
-          <EnhancedComponent  {...this.props} />
+        <FormProvider value={{}}>
+          <EnhancedComponent {...this.props} />
         </FormProvider>
-      )
+      );
     }
   }
 
-  const mapStateToProps = (state) => {
-    return selector(state)
-  }
+  const mapStateToProps = state => {
+    return selector(state);
+  };
 
-  return connect(mapStateToProps, { ...actionCreators(id), ...actions })(FormWrapper)
-}
+  return connect(
+    mapStateToProps,
+    { ...actionCreators(id), ...actions }
+  )(FormWrapper);
+};
 
-export default withForm
+export default withForm;

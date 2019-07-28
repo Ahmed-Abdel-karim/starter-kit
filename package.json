@@ -8,8 +8,8 @@
     "test:watch": "jest --watch",
     "build": "webpack --config ./config/webpack.config.js",
     "devserver": "webpack-dev-server --config ./config/webpack.config.js",
-    "format": "prettier --write  \"assets/**/*.js\" ",
-    "lint": "eslint \"assets/**/*.js\" ",
+    "format": "prettier --write  \"src/**/*.js\" ",
+    "lint": "eslint \"src/**/*.js\" ",
     "doc": "jsdoc -c jsdoc.conf.json",
     "build:dev": "webpack --config ./config/webpack.config.js",
     "validate": "npm-run-all --parallel format lint"

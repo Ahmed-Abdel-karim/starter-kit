@@ -1,6 +1,5 @@
 import * as types from './formActionTypes';
 
-
 export const changeField = id => (name, value) => {
   return {
     type: types.CHANGE(id),
@@ -12,10 +11,9 @@ export const changeField = id => (name, value) => {
       id
     }
   };
-}
+};
 
-
-export const setInitialState = id => (value) => {
+export const setInitialState = id => value => {
   return {
     type: types.SET_INITIAL_STATE(id),
     payload: {
@@ -25,7 +23,7 @@ export const setInitialState = id => (value) => {
       id
     }
   };
-}
+};
 
 export const resetForm = id => () => {
   return {
@@ -34,7 +32,7 @@ export const resetForm = id => () => {
       id
     }
   };
-}
+};
 
 export const setFieldError = id => (name, errorMessage) => {
   return {
@@ -44,10 +42,10 @@ export const setFieldError = id => (name, errorMessage) => {
     },
     meta: {
       name,
-      id,
+      id
     }
-  }
-}
+  };
+};
 
 export const registerField = id => (name, required) => {
   return {
@@ -59,16 +57,15 @@ export const registerField = id => (name, required) => {
     meta: {
       id
     }
-  }
-}
+  };
+};
 
 const actionCreatorsGroup = id => ({
   changeField: changeField(id),
-  setInitialState:setInitialState(id),
-  resetForm:resetForm(id),
-  setFieldError:setFieldError(id),
-  registerField:registerField(id),
-})
+  setInitialState: setInitialState(id),
+  resetForm: resetForm(id),
+  setFieldError: setFieldError(id),
+  registerField: registerField(id)
+});
 
-
-export default actionCreatorsGroup
+export default actionCreatorsGroup;
