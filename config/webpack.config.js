@@ -6,7 +6,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 
 const publicDir = path.join(__dirname, '..', 'public');
-const assetsDir = path.resolve(__dirname, '..', 'assets');
+const assetsDir = path.resolve(__dirname, '..', 'src');
 
 module.exports = {
   mode: 'development',
@@ -59,6 +59,7 @@ module.exports = {
       },
       chunksSortMode: 'none'
     }),
+    // @ts-ignore
     new ProgressBarPlugin({
       width: 100
     }),

@@ -3,18 +3,19 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/App';
 
-const store = createStore(() => ({}),{},window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+// @ts-ignore
+const store = createStore(() => ({}), {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 const Component = () => {
   return (
-    <Provider store={store} >
+    <Provider store={store}>
       <App />
     </Provider>
-  )
+  );
 };
 
 const HotWrapper = hot(module)(Component);

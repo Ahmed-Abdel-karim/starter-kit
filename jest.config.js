@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   testEnvironment: "jsdom",
-  testPathIgnorePatterns: ['<rootDir>/node_modules'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules','<rootDir>/__test__/helpers'],
   setupFilesAfterEnv: [
     '@testing-library/react/cleanup-after-each',
   ],
