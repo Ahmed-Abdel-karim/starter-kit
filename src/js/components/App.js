@@ -1,12 +1,23 @@
-import React from 'react';
-import withForm from './withForm';
+import React, { Component } from 'react'
+import FormComp from './FormComp';
 
-const App = () => {
-  return <div>Hello world</div>;
-};
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+    this.formRef = React.createRef()
+  }
 
-export default withForm({
-  id: 'app-form',
-  selector: () => {},
-  actions: {}
-})(App);
+  render() {
+
+    return (
+      <div>
+        <FormComp ref={this.formRef} />
+      </div>
+    )
+
+  }
+}
+
+
+export default App

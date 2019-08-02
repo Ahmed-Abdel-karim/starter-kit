@@ -1,5 +1,19 @@
 import * as types from './formActionTypes';
 
+export const registerField = id => (name, required, fieldType) => {
+  return {
+    type: types.REGISETR_FIELD(id),
+    payload: {
+      required,
+      fieldType
+    },
+    meta: {
+      name,
+      id,
+    }
+  };
+};
+
 export const changeField = id => (name, value) => {
   return {
     type: types.CHANGE(id),
@@ -47,18 +61,7 @@ export const setFieldError = id => (name, errorMessage) => {
   };
 };
 
-export const registerField = id => (name, required) => {
-  return {
-    type: types.REGISETR_FIELD(id),
-    payload: {
-      name,
-      required
-    },
-    meta: {
-      id
-    }
-  };
-};
+
 
 const actionCreatorsGroup = id => ({
   changeField: changeField(id),
