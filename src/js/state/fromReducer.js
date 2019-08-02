@@ -1,49 +1,43 @@
 // @ts-nocheck
 import * as types from './formActionTypes';
 
-
 /**
  * form reducer is a higher order reducer function that returens reducer function
  * with the form id to differentiate between forms in the same page
  */
 
-/** 
+/**
  * form reducer helpers
  */
 
 const registerField = (state, { payload, meta }) => {
   const { name } = meta;
-  const { required, fieldType } = payload
-  if (fieldType === "array") {
+  const { required, fieldType } = payload;
+  if (fieldType === 'array') {
     return {
       ...state,
-      [name]:
-        { value: [], required: Boolean(required), touched: false, error: "" }
-    }
+      [name]: { value: [], required: Boolean(required), touched: false, error: '' }
+    };
   }
   return {
     ...state,
-    [name]:
-      { value: '', required: Boolean(required), touched: false, error: "" }
-  }
-}
+    [name]: { value: '', required: Boolean(required), touched: false, error: '' }
+  };
+};
 
 const handleChange = (state, { payload, meta }) => {
   const { value } = payload;
   const { name } = meta;
   return {
-    ...state, [name]: {
+    ...state,
+    [name]: {
       ...state[name],
       value,
       touched: true,
-      error: ""
+      error: ''
     }
-  }
-
-}
-
-
-
+  };
+};
 
 const formReducer = (id, initialstate = {}) => (state = initialstate, action) => {
   /**
@@ -61,7 +55,6 @@ const formReducer = (id, initialstate = {}) => (state = initialstate, action) =>
   } else {
     return state;
   }
-
 };
 
 export default formReducer;

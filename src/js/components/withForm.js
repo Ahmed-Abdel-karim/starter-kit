@@ -12,30 +12,25 @@ import { FormProvider } from './formContext';
 // 3 - add scroll to error
 
 const withForm = ({ id, selector, actions = {} }) => EnhancedComponent => {
-
   class FormWrapper extends Component {
-
     // all the name of actions related to the form
-    formMethodsList = Object.keys(actionCreators(id))
+    formMethodsList = Object.keys(actionCreators(id));
 
-    componentDidMount() { }
-
+    componentDidMount() {}
 
     // remove the form methods form the props passed to the component
     getOtherProps = () => _omit(this.props, [...this.formMethodsList, 'formState']);
 
     render() {
       // eslint-disable-next-line react/prop-types
-      const { innerRef, formState } = this.props
+      const { innerRef, formState } = this.props;
       return (
         <FormProvider
           // pass only form methods
-          value={
-            {
-              ..._pick(this.props, this.formMethodsList),
-              formState
-            }
-          }
+          value={{
+            ..._pick(this.props, this.formMethodsList),
+            formState
+          }}
         >
           <EnhancedComponent ref={innerRef} {...this.getOtherProps()} />
         </FormProvider>
@@ -43,7 +38,7 @@ const withForm = ({ id, selector, actions = {} }) => EnhancedComponent => {
     }
   }
 
-  FormWrapper.displayName = `withForm-${id}`
+  FormWrapper.displayName = `withForm-${id}`;
 
   const mapStateToProps = state => {
     return selector(state);
@@ -54,8 +49,7 @@ const withForm = ({ id, selector, actions = {} }) => EnhancedComponent => {
     { ...actionCreators(id), ...actions },
     null,
     { forwardRef: true }
-  )(React.forwardRef((props, ref) => <FormWrapper {...props} innerRef={ref} />))
+  )(React.forwardRef((props, ref) => <FormWrapper {...props} innerRef={ref} />));
 };
-
 
 export default withForm;

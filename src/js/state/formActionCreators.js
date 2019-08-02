@@ -9,7 +9,7 @@ export const registerField = id => (name, required, fieldType) => {
     },
     meta: {
       name,
-      id,
+      id
     }
   };
 };
@@ -60,8 +60,6 @@ export const setFieldError = id => (name, errorMessage) => {
     }
   };
 };
-
-
 
 const actionCreatorsGroup = id => ({
   changeField: changeField(id),

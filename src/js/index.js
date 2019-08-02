@@ -8,14 +8,18 @@ import { createStore, combineReducers } from 'redux';
 import App from './components/App';
 import formReducer from './state/fromReducer';
 
-const store = createStore(combineReducers({
-  test:formReducer("test")
-}), {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  combineReducers({
+    test: formReducer('test')
+  }),
+  {},
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const Component = () => {
   return (
     <Provider store={store}>
-      <App/>
+      <App />
     </Provider>
   );
 };
