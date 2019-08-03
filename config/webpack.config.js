@@ -28,6 +28,10 @@ module.exports = {
         }
       },
       {
+        test: /\.tsx?$/,
+        loader: "ts-loader"
+      },
+      {
         test: /\.(bmp|gif|jpe?g|png)$/,
         use: {
           loader: 'url-loader',
