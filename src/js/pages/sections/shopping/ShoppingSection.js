@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import TitleGroup from '../../../common/titleGroup/TitleGroup';
-import CategoryCarousel from '../../../components/categoryCarousel/CategoryCarousel';
+import CategoryCarousel from '../../../common/categoryCarousel/CategoryCarousel';
 import SimpleGrid from '../../../common/simpleGrid/SimpleGrid';
 import { benifitsList } from './data';
 
@@ -15,7 +15,7 @@ export default function ShoppingSection() {
       </div>
       <CategoryCarousel />
       <section className="benifits container ">
-        <SimpleGrid items={benifitsList} sm={6} md={3}>
+        <SimpleGrid items={benifitsList} sm={6} md={6} lg={3}>
           {({ text, sub, icon }) => (
             <div key={text} className="benifits-item">
               <div className="icon-container">

@@ -1,6 +1,6 @@
 import React from 'react';
-import MainCarousel from '../../../components/mainCarousel/MainCarousel';
-import BannerCard from '../../../components/bannerCard/BannerCard';
+import MainCarousel from '../../../common/mainCarousel/MainCarousel';
+import BannerCard from '../../../common/bannerCard/BannerCard';
 
 import './banner-section.scss';
 

@@ -8,8 +8,8 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
 import '../scss/customBootstrapTheme.scss';
 import Home from './pages/Home';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import Header from './layout/header/Header';
+import Footer from './layout/footer/Footer';
 
 const reducer = () => {};
 

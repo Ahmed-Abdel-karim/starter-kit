@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import Input from '../../components/input/Input';
+import Input from '../input/Input';
 
 import './input-with-button.scss';
 

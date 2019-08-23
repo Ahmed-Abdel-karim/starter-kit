@@ -3,7 +3,7 @@ import React from 'react';
 import './preview-section.scss';
 import SimpleGrid from '../../../common/simpleGrid/SimpleGrid';
 import { sections } from './data';
-import PreviewCard from '../../../components/PreviewCard/PreviewCard';
+import PreviewCard from '../../../common/PreviewCard/PreviewCard';
 
 export default function PreviewSection() {
   return (

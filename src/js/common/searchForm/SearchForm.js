@@ -6,7 +6,7 @@ import DropdownMenu from '../dropdown/DropdownMenu';
 import searchIcon from '../../../images/icons/search.png';
 
 import './search-form.scss';
-import Input from '../../components/input/Input';
+import Input from '../input/Input';
 
 export default function SearchForm() {
   return (
