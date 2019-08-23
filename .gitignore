@@ -1,9 +1,0 @@
-# Dependency directories
-node_modules/
-
-# build folder
-public/
-
-# coverage reports
-
-coverage/
