@@ -1,0 +1,19 @@
+@import"../../../scss/variables";
+
+.btn-pagination {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid;
+  background: #fff;
+  font-weight: bolder;
+  font-size: 40px;
+  color: #999999;
+  &:hover{
+    color: $primary;
+  }
+  &.disabled{
+    opacity: .5;
+    cursor: not-allowed;
+  }
+}

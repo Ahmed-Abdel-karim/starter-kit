@@ -3,20 +3,15 @@
 import { hot } from 'react-hot-loader';
 import React from 'react';
 import ReactDom from 'react-dom';
-import { ThemeProvider } from 'react-jss';
 import { Provider } from 'react-redux';
 import { createStore, compose, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import { ApplyGlobalCss, createTheme } from './theme';
-import CssBase from './components/CssBase';
-import Test from './Test';
+import '../scss/customBootstrapTheme.scss';
+import Home from './pages/Home';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 const reducer = () => {};
-
-// put global css here
-ApplyGlobalCss();
-
-const theme = createTheme();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(reduxThunk)));
@@ -24,10 +19,9 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(reduxThunk))
 const Component = () => {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBase />
-        <Test />
-      </ThemeProvider>
+      <Header />
+      <Home />
+      <Footer />
     </Provider>
   );
 };

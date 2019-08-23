@@ -1,0 +1,30 @@
+@import '../../../scss/variables';
+
+.inputGroup {
+  width: 100%;
+  button {
+    display: inline-block;
+    width: 25%;
+    background: white;
+    border: none;
+    border: 1px solid $border-color;
+    border-left: none;
+    border-radius: 0;
+  }
+  input {
+    display: inline-block;
+    width: 70%;
+    margin: 0 !important;
+    border-radius: 0;
+    border: 1px solid $border-color;
+    border-right: none;
+
+    &:focus {
+      color: #495057;
+      background-color: #fff;
+      outline: 0;
+      -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 86, 168, 0.25);
+      box-shadow: none;
+    }
+  }
+}

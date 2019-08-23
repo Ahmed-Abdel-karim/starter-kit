@@ -1,0 +1,37 @@
+.banner {
+  position: relative;
+
+  .banner-card-container {
+    position: absolute;
+    display: inline-block;
+    z-index: 9;
+    top: 15%;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .banner {
+    .banner-card-container {
+      top: 5%;
+      width: 45%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .banner {
+    .banner-card-container {
+      width: 55%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner {
+    .banner-card-container {
+      position: static;
+      width: 100%;
+    }
+  }
+}

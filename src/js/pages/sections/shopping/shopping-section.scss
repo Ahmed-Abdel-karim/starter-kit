@@ -1,0 +1,36 @@
+@import"../../../../scss/variables";
+
+.categories-shopping {
+  .benifits {
+    margin-top: 80px;
+    .icon-container {
+      background: $primary;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .benifits-item {
+      display: flex;
+      align-content: center;
+      margin-bottom: 15px;
+
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 25px;
+        .title {
+          font-size: 1.5rem;
+        }
+        .sub {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

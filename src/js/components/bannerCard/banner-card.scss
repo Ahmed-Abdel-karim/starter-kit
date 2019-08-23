@@ -1,0 +1,43 @@
+@import '../../../scss/variables';
+
+.bannerCard {
+  font-family: 'Comfortaa';
+  background: #fff;
+  padding: 3rem 2rem 2rem 2rem;
+  display: inline-block;
+  border-bottom: 12px solid $secondary;
+
+  h4 {
+    font-size: 1.9rem;
+    padding-right: 12rem;
+    line-height: 1.55;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+
+    strong {
+      color: $primary;
+    }
+  }
+  p {
+    font-size: 1.3rem;
+    padding-right: 60px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .bannerCard {
+    padding: 1rem;
+    display: inline-block;
+    border-bottom: 12px solid $secondary;
+
+    h4 {
+      font-size: 1.6rem;
+      padding-right: 2rem;
+      line-height: 1.55;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

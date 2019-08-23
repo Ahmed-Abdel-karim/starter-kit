@@ -1,0 +1,13 @@
+.products-section {
+  background: #f6f8f9;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .left{
+    top: 100%;
+    left: calc(50% - 85px);
+  }
+  .right{
+    top: 100%;
+    left: calc(50% + 35px);
+  }
+}

@@ -1,0 +1,19 @@
+.filter-container{
+  margin: 5rem 0;
+}
+
+.products{
+  position: relative;
+  .left{
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    left: -2.5%;
+  }
+  .right{
+    position: absolute;
+    z-index: 2;
+    top: 45%;
+    right: -2.5%;
+  }
+}

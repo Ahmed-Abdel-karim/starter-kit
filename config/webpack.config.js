@@ -26,6 +26,95 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
+      }, 
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' },
+        {
+          loader: "css-loader",
+          options: {
+            sourceMap: true,
+            importLoaders: 1,
+            modules: false,
+          }
+        }, {
+          loader: "postcss-loader",
+          options: {
+            plugins: [require('postcss-flexbugs-fixes'), require('autoprefixer')({
+              flexbox: 'no-2009',
+            })],
+            sourceMap: true
+          }
+        }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: 'style-loader' },
+        {
+          loader: "css-loader",
+          options: {
+            sourceMap: true,
+            importLoaders: 1,
+            modules: false,
+          }
+        }, {
+          loader: "postcss-loader",
+          options: {
+            plugins: [require('postcss-flexbugs-fixes'), require('autoprefixer')({
+              flexbox: 'no-2009',
+            })],
+            sourceMap: true
+          }
+        }
+        ]
+      }, {
+        test: /\.scss$/,
+        use: [{ loader: 'style-loader' }
+          ,
+        {
+          loader: "css-loader",
+          options: {
+            sourceMap: true,
+            importLoaders: 3,
+          }
+        }, {
+          loader: 'resolve-url-loader',
+          options: {
+            keepQuery: true,
+            root: path.resolve()
+          }
+        }, {
+          loader: "postcss-loader",
+          options: {
+            plugins: [require('postcss-flexbugs-fixes'), require('autoprefixer')({
+              browsers: [
+                '>1%',
+                'last 4 versions',
+                'Firefox ESR',
+                'not ie < 9',
+              ],
+              flexbox: 'no-2009',
+            })],
+            sourceMap: true
+          }
+        }, {
+          loader: "sass-loader",
+          options: {
+            sourceMap: true,
+          }
+        }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash:8].[ext]',
+            outputPath: 'fonts'
+          }
+        }]
       },
       {
         test: /\.(bmp|gif|jpe?g|png)$/,
